@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Occultica - Personal Transformation through Occultism</title>
+  <style>
+    /* Dark Art Nouveau inspired style */
+    @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Cormorant+Garamond:wght@400;700&display=swap');
+
+    /* Root colors inspired by dark art nouveau: deep greens, golds, dark purples */
+    :root {
+      --dark-bg: #1a1a1a;
+      --dark-green: #2a3a2a;
+      --gold: #c9a66b;
+      --deep-purple: #3b2e4d;
+      --accent-green: #4a6a4a;
+      --text-light: #e6d8b8;
+      --text-muted: #a89e7e;
+      --border-gold: #b08d57;
+    }
+
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    /* Container with subtle border and rounded corners */
+    .container {
+      max-width: 900px;
+      background: var(--dark-green);
+      border: 2px solid var(--border-gold);
+      border-radius: 1.5rem;
+      padding: 2.5rem 3rem;
+      box-shadow:
+        0 0 15px 3px rgba(201, 166, 107, 0.3),
+        inset 0 0 20px 2px rgba(201, 166, 107, 0.5);
+    }
+
+    /* Title with art nouveau font and decorative flourish */
+    h1 {
+      font-family: 'Uncial Antiqua', cursive;
+      font-size: 3.5rem;
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      position: relative;
+      letter-spacing: 0.1em;
+      text-shadow:
+        0 0 5px var(--gold),
+        0 0 10px var(--gold);
+    }
+    /* Decorative flourish under title */
+    h1::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0.5rem auto 2rem auto;
+      border-radius: 2px;
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    /* Domain branding */
+    .domain {
+      font-size: 1rem;
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Paragraph styling */
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+      text-align: justify;
+      text-indent: 1.5em;
+      letter-spacing: 0.02em;
+      text-shadow: 0 0 2px rgba(0,0,0,0.7);
+    }
+
+    /* Highlighted course content list */
+    ul.course-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--gold);
+    }
+    ul.course-list li {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      font-weight: 600;
+      color: var(--accent-green);
+      position: relative;
+      font-size: 1.1rem;
+    }
+    ul.course-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 1.2rem;
+      top: 0;
+      line-height: 1;
+    }
+
+    /* Email contact styling */
+    .contact {
+      font-size: 1.2rem;
+      text-align: center;
+      font-weight: 700;
+      color: var(--gold);
+      text-shadow: 0 0 5px var(--gold);
+      margin-top: 2rem;
+      font-family: 'Uncial Antiqua', cursive;
+    }
+    .contact a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--gold);
+      transition: color 0.3s ease;
+    }
+    .contact a:hover,
+    .contact a:focus {
+      color: var(--text-light);
+      border-bottom: 1px solid var(--text-light);
+    }
+
+    /* Subtle background art nouveau pattern using SVG */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 0C155.228 0 200 44.7715 200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0Z" stroke="%23b08d57" stroke-opacity="0.05" stroke-width="2"/><path d="M100 20C138.137 20 170 51.863 170 90C170 128.137 138.137 160 100 160C61.863 160 30 128.137 30 90C30 51.863 61.863 20 100 20Z" stroke="%23b08d57" stroke-opacity="0.05" stroke-width="2"/></svg>');
+      background-repeat: repeat;
+      background-position: center;
+      background-size: 200px 200px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      ul.course-list li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main" aria-labelledby="page-title">
+    <p class="domain">occultica</p>
+    <h1 id="page-title">Personal Transformation through Occultism</h1>
+
+    <p>
+      This course is a journey into the hidden realms of the self—where true transformation begins. Together, we will explore the depths of your inner world, uncovering forgotten wisdom and healing what has been left in the dark. This path is for those ready to embrace their full potential, reclaiming lost power and wisdom to step forward with clarity and strength. You will not walk alone. I am here to guide you every step of the way, from the roots of your being to the light of your future.
+    </p>
+
+    <p>
+      Blending sidereal astrology, kabbalah, numerology and other methods of divination such as diving into tarot cards and their significance for you personally, how certain placements in your birth chart relate to certain cards and so on..
+    </p>
+
+    <p>
+      I crafted a quick 1 month course on how to deeply connect with your cosmic nature through divination. (Note: I do not work with new age systems such as finding which star-seed you embody) instead, I focus on traditional ones.
+    </p>
+
+    <p><strong>The course content is as follows:</strong></p>
+    <ul class="course-list" aria-label="Course content weeks">
+      <li>Week 1 - Your tarot card, what it means and where it sits on the tree of life.</li>
+      <li>Week 2 - Your astrological placements in depth, from a sidereal perspective (true to the stars) and how they relate to tarot.</li>
+      <li>Week 3 - Your past life (if you know your exact time of birth)</li>
+      <li>Week 4 - Your purpose (again knowing the time of birth is crucial because of how the nodes (North Node, South Node) are placed through the wheel of astrological houses)</li>
+    </ul>
+
+    <p class="contact" aria-label="Contact email">
+      Email me at <a href="mailto:201702472@pua.edu.eg" aria-describedby="email-desc">201702472@pua.edu.eg</a> to subscribe
+    </p>
+  </main>
+</body>
+</html>
+</content>
+</create_file>
+
